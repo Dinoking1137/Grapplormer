@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://0non32k10f6c"]
+
+[ext_resource type="PackedScene" uid="uid://epa22na1xwo3" path="res://Scenes/player.tscn" id="1_wouqw"]
+[ext_resource type="Texture2D" uid="uid://w8oa82b8siv2" path="res://icon.svg" id="2_l6uv7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aohuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wouqw"]
+size = Vector2(128, 64)
+
+[node name="BaseTestScene" type="Node2D" unique_id=2065685198]
+
+[node name="CharacterBody2D" parent="." unique_id=628870359 instance=ExtResource("1_wouqw")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=257332142]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=775862798]
+position = Vector2(-1, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1516564639]
+scale = Vector2(5, 1)
+texture = ExtResource("2_l6uv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=747427538]
+position = Vector2(0, -64)
+shape = SubResource("WorldBoundaryShape2D_aohuc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1690663740]
+position = Vector2(128, 264)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=2039271441]
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_l6uv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=299207975]
+shape = SubResource("RectangleShape2D_wouqw")
